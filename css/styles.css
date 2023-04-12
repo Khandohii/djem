@@ -1240,13 +1240,9 @@ header .link_btn a{
     margin-top: 23px;
 }
 
-.news-item__btn{}
-
 .news-item__btn a{
     display: inline-flex;
 }
-
-.news-item__btn a:hover{}
 
 .news-item__img{
     position: absolute;
@@ -1266,6 +1262,95 @@ header .link_btn a{
     display: block;
     max-width: 100%;
     max-height: 100%;
+}
+
+
+.promotions{}
+
+.promotions .grid{
+    --margin-left: 20px;
+    --margin-bottom: 20px;
+    --items: 4;
+    
+    margin-left: calc(var(--margin-left, 0) * -1);
+    margin-bottom: calc(var(--margin-bottom, 0) * -1);
+}
+
+.promotion-item{
+    margin-left: var(--margin-left, 0);
+    margin-bottom: var(--margin-bottom, 0);
+    width: calc(100% / var(--items, 1) - var(--margin-left, 0));
+    
+    position: relative;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+    padding: 17px 20px 20px;
+    text-align: center;
+}
+
+.promotion-item__bonus{
+    position: absolute;
+    right: 11px;
+    top: -7px;
+    max-width: calc(100% - 22px);
+    border-radius: 3px;
+    background-color: #ca0f0f;
+    padding: 2px 6px;
+    font-size: 10px;
+    line-height: 1.2;
+    color: #fff;
+    font-weight: 500;
+}
+
+.promotion-item__logo{
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.promotion-item__logo img{
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    transition: .2s linear;
+}
+
+.promotion-item__logo a:hover img{
+    transform: translateY(-4px);
+}
+
+* + .promotion-item__title{
+    margin-top: 20px;
+}
+
+.promotion-item__title{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.promotion-item__title a{
+    text-decoration: none;
+    transition: .2s linear;
+    border-bottom: 1px solid transparent;
+    color: currentColor;
+}
+
+.promotion-item__title a:hover{
+    border-color: currentColor;
+}
+
+* + .promotion-item__desc{
+    margin-top: 10px;
+}
+
+.promotion-item__desc{
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 300;
 }
 
 
