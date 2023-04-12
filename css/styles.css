@@ -604,6 +604,14 @@ body.lock{
     background: var(--btn-bg--hover);
 }
 
+.link_btn--purple a{
+    background: #968fff;
+}
+
+.link_btn--purple a:hover{
+    background: #7f77f9;
+}
+
 
 .sect-marg{
     margin-top: 20px;
@@ -1103,6 +1111,63 @@ header .link_btn a{
 .border_btn:hover{
     border-color: #acacac;
     color: #4f4f4f;
+}
+
+
+.block_banner{}
+
+.block_banner .box{
+    padding: 25px 44px;
+    position: relative;
+    padding-right: 410px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    min-height: 215px;
+}
+
+.block_banner .box .data{
+    max-width: 600px;
+}
+
+.block_banner .title{
+    font-weight: 600;
+    font-size: 28px;
+    color: #272a34;
+    line-height: 1.1;
+}
+
+.block_banner * + .text{
+    margin-top: 15px;
+}
+
+.block_banner .text{
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 475px;
+}
+
+.block_banner * + .link_btn{
+    margin-top: 30px;
+}
+
+.block_banner .link_btn a{
+    display: inline-flex;
+    padding: 0 70px;
+}
+
+.block_banner .box .img{
+    position: absolute;
+    width: 365px;
+    right: 30px;
+    top: 17px;
+}
+
+.block_banner .img img{
+    display: block;
+    width: 100%;
+    max-width: 100%;
 }
 
 
