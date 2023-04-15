@@ -247,3 +247,47 @@ const customSelect = function(path) {
         });
     }
 };
+
+const simpleRating = function(path) {
+    const ratings = document.querySelectorAll(path);
+
+    ratings.forEach(rating => {
+        const stars = rating.querySelectorAll('.simple-rating__item');
+
+        stars.forEach(star => {
+            star.children[0].style.pointerEvents = 'none';
+
+            star.addEventListener('mouseenter', (event) => {
+                let prevSibling = event.target.previousElementSibling;
+
+                event.target.classList.add('hover');
+
+                while(prevSibling) {
+                    prevSibling.classList.add('hover');
+                    prevSibling = prevSibling.previousElementSibling;
+                }
+            });
+            star.addEventListener('mouseleave', () => {
+                stars.forEach(star => {
+                    star.classList.remove('hover');
+                });
+            });
+
+            
+            star.addEventListener('click', (event) => {
+                stars.forEach(star => {
+                    star.classList.remove('active');
+                });
+
+                let prevSibling = event.target.previousElementSibling;
+
+                event.target.classList.add('active');
+
+                while(prevSibling) {
+                    prevSibling.classList.add('active');
+                    prevSibling = prevSibling.previousElementSibling;
+                }
+            });
+        });
+    });
+};

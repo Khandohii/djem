@@ -15,6 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
+    const sliderReviews = new Swiper('.reviews .slider', {
+        speed: 750,
+        slidesPerView: 4,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+    });
+
     
     customSelect('.custom-select select');
+
+    simpleRating('.simple-rating');
 });
