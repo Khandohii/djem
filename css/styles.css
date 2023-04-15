@@ -202,6 +202,39 @@ body.lock{
 }
 
 
+.btns{
+    --margin-left: 12px;
+    --margin-bottom: 20px;
+    
+    margin-left: calc(var(--margin-left, 0) * -1);
+    margin-bottom: calc(var(--margin-bottom, 0) * -1);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.btns > *{
+    margin-top: 20px;
+    
+    margin-left: var(--margin-left, 0);
+    margin-bottom: var(--margin-bottom, 0);
+}
+
+.btns .sep{
+    font-size: 300px;
+    font-size: 16px;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.btns .link_btn > *{
+    min-width: 324px;
+    height: 50px;
+}
+
 
 .form{
     --font-size: 16px;
@@ -326,34 +359,6 @@ body.lock{
 
 .form .agree a:hover{
     color: #111;
-}
-
-.form .btns{
-    --margin-left: 12px;
-    --margin-bottom: 20px;
-    
-    margin-left: calc(var(--margin-left, 0) * -1);
-    margin-bottom: calc(var(--margin-bottom, 0) * -1);
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-wrap: wrap;
-}
-
-.form .btns > *{
-    margin-top: 20px;
-    
-    margin-left: var(--margin-left, 0);
-    margin-bottom: var(--margin-bottom, 0);
-}
-
-.form .btns .sep{
-    font-size: 300px;
-    font-size: 16px;
-    line-height: 1.2;
-    text-transform: uppercase;
 }
 
 .form-message{
@@ -524,7 +529,9 @@ body.lock{
 
 
 .text_block{
-    color: var(--text_color);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .text_block > :last-child{
@@ -533,16 +540,15 @@ body.lock{
 
 .text_block h1,
 .text_block > .title{
-    color: var(--color1);
+    color: currentColor;
     font-family: var(--font_family);
-    font-size: var(--font_size_title);
+    font-size: 30px;
     font-weight: 700;
     line-height: var(--line_height_title);
 
     margin-bottom: 20px;
 }
 
-.text_block p,
 .text_block ul,
 .text_block ol{
     margin-bottom: 25px;
@@ -1568,11 +1574,6 @@ header .link_btn a{
     margin-top: 15px;
 }
 
-.sect_form .link_btn > *{
-    min-width: 324px;
-    height: 50px;
-}
-
 
 .sect_map{
     margin-top: 50px;
@@ -1733,6 +1734,84 @@ header .link_btn a{
 
 .review .simple-rating{
     margin-top: 20px;
+}
+
+
+.accordion .item{
+    border-top: 1px solid #dfdfdf;
+    cursor: pointer;
+}
+
+.accordion .item:last-child{
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.accordion .item .title{
+    padding: 20px 0;
+    padding-right: 50px;
+    position: relative;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    transition: .2s linear;
+}
+
+.accordion .item.active .title{
+    color: #4d8eff;
+}
+
+.accordion .item .title .icon{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    margin-top: -12px;
+    right: 14px;
+    transition: .2s linear;
+}
+
+.accordion .item .title .icon:before{
+    content: '';
+    width: 2px;
+    height: 100%;
+    background: #979797;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.accordion .item .title .icon:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #979797;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.accordion .item.active .title .icon{
+    transform: rotate(45deg);
+}
+
+.accordion .item .data{
+    transition: height .3s ease;
+    overflow  : hidden;
+}
+
+.accordion .item:not(.active) .data{
+    display: none;
+}
+
+.accordion .item .text_block{
+    padding-bottom: 20px;
+}
+
+
+.faq .btns{
+    margin-top: 80px;
 }
 
 /*---------------

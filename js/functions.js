@@ -291,3 +291,60 @@ const simpleRating = function(path) {
         });
     });
 };
+
+
+const accordion = function(path) {
+    const accordions = document.querySelectorAll(path);
+
+    accordions.forEach(accordion => {
+        const items = accordion.querySelectorAll('.item');
+
+        items.forEach(item => {
+            const openBtns = item.querySelectorAll('.open_btn');
+            const data = item.querySelector('.data');
+
+            openBtns.forEach(btn => {
+                btn.addEventListener('click', (event) => {
+                    if (!item.classList.contains('active')) {
+                        items.forEach(otherItem => {
+                            if (otherItem !== item && otherItem.classList.contains('active')) {
+                                closeItem(otherItem);
+                            }
+                        });
+                        
+                        item.classList.add('active');
+                        data.style.height = "auto";
+    
+                        /** Get the computed height of the container. */
+                        var height = data.clientHeight + "px";
+    
+                        /** Set the height of the content as 0px, */
+                        /** so we can trigger the slide down animation. */
+                        data.style.height = "0px";
+    
+                        /** Do this after the 0px has applied. */
+                        /** It's like a delay or something. MAGIC! */
+                        setTimeout(() => {
+                            data.style.height = height;
+                        }, 0);
+                    } else{
+                        closeItem(item);
+                    }
+                });
+            });
+        });
+    });
+
+    function closeItem(item) {
+        const data = item.querySelector('.data');
+        /** Set the height as 0px to trigger the slide up animation. */
+        data.style.height = "0px";
+
+        /** Remove the `active` class when the animation ends. */
+        data.addEventListener('transitionend', () => {
+            item.classList.remove('active');
+        }, { once: true });
+    }
+};
+
+accordion('.accordion');
