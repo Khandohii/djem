@@ -32,7 +32,7 @@
 
 		<link rel="stylesheet" href="css/styles.css">
 
-		<link rel="stylesheet" href="css/response_1199.css" media="(max-width: 1199px)">
+		<link rel="stylesheet" href="css/response_1190.css" media="(max-width: 1190px)">
 		<link rel="stylesheet" href="css/response_1024.css" media="(max-width: 1024px)">
 		<link rel="stylesheet" href="css/response_767.css" media="(max-width: 767px)">
 		<link rel="stylesheet" href="css/response_479.css" media="(max-width: 479px)">
@@ -49,10 +49,15 @@
 						</div>
 
 						<div class="wrap_menu">
+							<a href="/" class="link-office-menu">
+								<span class="link-office-menu__big-text">Найти наш офис в Польше</span>
+								<span class="link-office-menu__small-text">Наши офисы более чем в 20 городах</span>
+							</a>
+
 							<nav class="menu flex">
-								<div class="item"><a href="/">Главная страница</a></div>
-								<div class="item"><a href="/">Обратная связь</a></div>
-								<div class="item"><a href="/">Информация</a></div>
+								<div class="item"><a href="/"><span>Главная страница</span></a></div>
+								<div class="item"><a href="/"><span>Обратная связь</span></a></div>
+								<div class="item"><a href="/"><span>Информация</span></a></div>
 
 								<div class="item item--more">
 									<a href="/"><span>Еще...</span></a>
@@ -81,6 +86,10 @@
 									</div>
 								</div>
 							</nav>
+
+							<div class="link_btn link_btn--orange">
+								<a href="/" data-anchor="#form">Обратная связь</a>
+							</div>
 						</div>
 
 						<a href="/" class="link_office">
@@ -96,9 +105,15 @@
 							</div>
 						</div>
 
-						<a href="/" class="link_tg"><img src="images/tg_logo.png" alt=""></a>
+						<a href="https://t.me/@test" target="_blank" class="link_tg"><img src="images/tg_logo.png" alt=""></a>
 
 						<div class="link_btn"><a href="tel:+48500398600">+48 500 398 600</a></div>
+
+						<button type="button" class="mob_menu_link">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
 					</div>
 				</header>
 				<!-- End Header -->
@@ -188,7 +203,7 @@
 										<div>Инфа: Текст текст текст</div>
 									</div>
 
-									<div class="link_btn"><a href="/">Узнать наличие</a></div>
+									<div class="link_btn"><a href="/" data-anchor="#form">Узнать наличие</a></div>
 								</div>
 							</div>
 							
@@ -203,7 +218,7 @@
 										<div>Инфа: Текст текст текст</div>
 									</div>
 
-									<div class="link_btn"><a href="/">Узнать наличие</a></div>
+									<div class="link_btn"><a href="/" data-anchor="#form">Узнать наличие</a></div>
 								</div>
 							</div>
 							
@@ -411,7 +426,7 @@
 					</div>
 				</section>
 
-				<section class="sect_form sect-marg">
+				<section id="form" class="sect_form sect-marg">
 					<div class="cont">
 						<div class="main-title main-title--center">ЕСТЬ ЖЕЛАНИЕ НАЧАТЬ РАБОТАТЬ С НАМИ?</div>
 
@@ -1154,13 +1169,13 @@
 
 						<div class="btns flex">
 							<div class="link_btn link_btn--orange">
-								<button type="button">Оставить заявку</button>
+								<button type="button" data-anchor="#form">Оставить заявку</button>
 							</div>
 
 							<div class="sep">ИЛИ</div>
 
 							<div class="link_btn link_btn--blue">
-								<a href="/" target="_blank">Telegram @Testtest</a>
+								<a href="https://t.me/@test" target="_blank">Telegram @Testtest</a>
 							</div>
 						</div>
 					</div>
@@ -1171,7 +1186,26 @@
 
 			<!-- Footer -->
 			<footer>
-				<div class="cont"></div>
+				<div class="cont flex">
+					<div class="col_l">
+						<div class="copy">&copy; 2023 Djem sp.z.o.o</div>
+
+						<div class="phone"><a href="tel:88008888888">8 800 888-88-88</a></div>
+
+						<div class="phone-desc">Служба поддержки Djem с 10 00 до 18 00</div>
+					</div>
+
+					<div class="col_r">
+						<div class="menu">
+							<div class="item"><a href="/">Пользовательское соглашение</a></div>
+							<div class="item"><a href="/">Политика конфиденциальности</a></div>
+							<div class="item"><a href="/">Пользовательское соглашение</a></div>
+							<div class="item"><a href="/">Политика конфиденциальности</a></div>
+							<div class="item"><a href="/">Пользовательское соглашение</a></div>
+							<div class="item"><a href="/">Политика конфиденциальности</a></div>
+						</div>
+					</div>
+				</div>
 			</footer>
 			<!-- End Footer -->
 		</div>

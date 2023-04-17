@@ -30,4 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     customSelect('.custom-select select');
 
     simpleRating('.simple-rating');
+
+    accordion('.accordion');
+
+    anchorScroll('[data-anchor]', 20);
 });

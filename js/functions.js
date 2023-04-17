@@ -55,19 +55,70 @@ document.querySelectorAll('[data-anchor]').forEach(link => {
 
 
 // Открытие моб меню
-// document.querySelector('.mob_menu_link').addEventListener("click", function(e){
-//     e.preventDefault();
+const openMenuBtn = document.querySelector('.mob_menu_link'),
+      mobMenu = document.querySelector('header .wrap_menu');
 
-//     if ( this.classList.contains('active') ) {
-//         this.classList.remove('active');
+openMenuBtn.addEventListener("click", function(e){
+    e.preventDefault();
 
-//         document.querySelector('header .menu').classList.remove('visible');
-//     } else {
-//         this.classList.add('active');
+    if ( this.classList.contains('active') ) {
+        closeMobMenu(mobMenu, openMenuBtn);
+    } else {
+        openMobMenu(mobMenu, openMenuBtn);
+    }
+});
 
-//         document.querySelector('header .menu').classList.add('visible');
-//     }
-// });
+function openMobMenu(menu, btn) {
+    btn.classList.add('active');
+
+    menu.classList.add('visible');
+}
+
+function closeMobMenu(menu, btn) {
+    btn.classList.remove('active');
+
+    menu.classList.remove('visible');
+}
+
+
+// MobSubmenu
+document.querySelectorAll('header .menu .item--more').forEach(item => {
+    const link = item.querySelector('a');
+    const submenu = item.querySelector('.submenu');
+
+    item.addEventListener('click', (event) => {
+        if (window.innerWidth < 1191 && event.target === link || event.target === link.querySelector('span')) {
+            event.preventDefault();
+            console.log('link');
+
+            if (!item.classList.contains('opened')) {
+                item.classList.add('opened');
+                submenu.style.height = "auto";
+
+                /** Get the computed height of the container. */
+                var height = submenu.clientHeight + "px";
+
+                /** Set the height of the content as 0px, */
+                /** so we can trigger the slide down animation. */
+                submenu.style.height = "0px";
+
+                /** Do this after the 0px has applied. */
+                /** It's like a delay or something. MAGIC! */
+                setTimeout(() => {
+                    submenu.style.height = height;
+                }, 0);
+            } else {
+                /** Set the height as 0px to trigger the slide up animation. */
+                submenu.style.height = "0px";
+        
+                /** Remove the `active` class when the animation ends. */
+                submenu.addEventListener('transitionend', () => {
+                    item.classList.remove('opened');
+                }, { once: true });
+            }
+        }
+    });
+});
 
 
 // Tabs
@@ -292,6 +343,27 @@ const simpleRating = function(path) {
     });
 };
 
+const anchorScroll = function(path, offset) {
+    const links = document.querySelectorAll(path);
+
+    links.forEach(link => {
+        const linkOffset = link.getAttribute('data-offset') || offset || 0;
+        const href = link.getAttribute('data-anchor').substring(1);
+
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const targetPosition = document.getElementById(href).getBoundingClientRect().top - linkOffset;
+
+            window.scrollBy({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+
+            closeMobMenu(mobMenu, openMenuBtn);
+        });
+    });
+};
+
 
 const accordion = function(path) {
     const accordions = document.querySelectorAll(path);
@@ -346,5 +418,3 @@ const accordion = function(path) {
         }, { once: true });
     }
 };
-
-accordion('.accordion');

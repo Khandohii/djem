@@ -1,0 +1,245 @@
+@media (max-width: 1190px){
+    /*---------------
+        Main styles
+    ---------------*/
+    .text_block{
+        font-size: 14px;
+    }
+
+    .swiper-pagination{
+        padding: 0 54px;
+    }
+
+    /*---------------
+        Header
+    ---------------*/
+    header .logo{
+        margin-right: auto;
+    }
+
+    header .wrap_menu{
+        position: absolute;
+        width: 468px;
+        border-radius: 10px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+        right: 6px;
+        top: calc(100% - 5px);
+        padding: 7px 8px 25px;
+        transition: .2s linear;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    header .wrap_menu.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    header .menu{
+        display: block;
+    }
+
+    header .menu > .item + .item{
+        margin-left: 0;
+        border-top: 1px solid #dfdfdf;
+    }
+
+    header .menu > .item > a{
+        padding: 25px 17px;
+        display: block;
+    }
+
+    header .menu .item--more:hover > a{
+        color: #000;
+    }
+
+    header .menu .item--more.opened > a{
+        color: #4d8eff;
+    }
+
+    header .menu .item--more:hover > a span{
+        border-color: transparent;
+    }
+
+    header .menu .item--more.opened > a span{
+        border-color: #4d8eff;
+    }
+    
+    header .menu .item--more > a:before{
+        content: '';
+        width: 14px;
+        height: 8px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -4px;
+        background: url('../images/arrow-down.png') 0 0 no-repeat;
+        transition: .2s linear;
+    }
+    
+    header .menu .item--more:hover > a:before{
+        transform: rotate(0);
+    }
+
+    header .menu .item--more.opened > a:before{
+        transform: rotate(-180deg);
+    }
+
+    header .menu .item .submenu{
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        box-shadow: none;
+        background: none;
+        width: 100%;
+        transition: height .3s ease;
+        overflow: hidden;
+    }
+
+    header .menu .item:not(.opened) .submenu{
+        display: none;
+    }
+
+    header .menu .item .submenu .item a:after{
+        display: none;
+    }
+
+    header .wrap_menu .link_btn{
+        display: block;
+        padding: 0 16px;
+        margin-top: 20px;
+    }
+
+    .mob_menu_link{
+        display: block;
+    }
+
+    header .link-office-menu {
+        display: block;
+    }
+
+    header .link_office{
+        font-size: 14px;
+        padding-left: 20px;
+    }
+
+    header .link_office:before{
+        width: 14px;
+        height: 20px;
+        background-size: contain;
+        margin-top: -8px;
+    }
+
+    /*---------------
+        Main section
+    ---------------*/
+    .main_slider .slide {
+        padding: 33px 56px 53px;
+    }
+
+    .main_slider .slide .data{
+        max-width: 400px;
+    }
+
+    .main_slider .slide .img{
+        max-width: 346px;
+    }
+
+    .main_slider .slide .title{
+        font-size: 28px;
+    }
+
+    .main_slider .slide .info{
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .main_slider .slide .link_btn a{
+        font-size: 16px;
+        height: 48px;
+        padding: 0 70px;
+    }
+
+
+    .catalog .item .data .name{
+        font-size: 14px;
+        width: calc(100% - 150px);
+    }
+
+    .catalog .item .data .link_btn{
+        width: 132px;
+    }
+
+    .catalog .item .data .link_btn a{
+        font-size: 12px;
+    }
+
+
+    .block_banner .box{
+        padding: 30px 28px 24px;
+    }
+
+    .block_banner .title{
+        font-size: 24px;
+    }
+
+    .block_banner .text{
+        font-size: 14px;
+    }
+
+
+    .news-item{
+        padding: 40px 200px 30px 28px;
+    }
+
+    .news-item__title{
+        font-size: 24px;
+    }
+
+    .news-item__text{
+        font-size: 14px;
+        max-width: 210px;
+    }
+
+    .news-item__img{
+        width: 171px;
+    }
+
+
+    .promotion-item__title{
+        font-size: 16px;
+    }
+    
+    .promotion-item__logo img{
+        transform: scale(.8);
+    }
+
+
+    .cities-item{
+        font-size: 14px;
+    }
+
+    .cities-item .icon{
+        width: 14px;
+        height: 20px;
+    }
+
+
+    .review .name{
+        font-size: 14px;
+    }
+
+
+    .accordion .item .title{
+        font-size: 16px;
+        line-height: 18px;
+        padding: 25px 0;
+        padding-right: 50px;
+    }
+
+    /*---------------
+        Footer
+    ---------------*/
+    
+}
