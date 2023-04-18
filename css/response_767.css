@@ -2,17 +2,166 @@
     /*---------------
         Main styles
     ---------------*/
+    .swiper {
+        --swiper-pagination-bottom: 0;
+    }
+
+    .swiper-pagination{
+        text-align: center;
+    }
+
+
+    .main-title {
+        font-size: 18px;
+    }
+
+    .btns .link_btn > * {
+        min-width: 186px;
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .btns .sep{
+        font-size: 14px;
+    }
     
     /*---------------
         Header
     ---------------*/
+    header .cont{
+        height: 80px;
+    }
+
+    header .logo{
+        width: 88px;
+    }
+
+    header .link_office{
+        display: none;
+    }
 
     /*---------------
         Main section
     ---------------*/
+    .main_slider .slide{
+        padding: 32px 0 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main_slider .slide .data{
+        width: 100%;
+    }
+
+    .main_slider .slide .img{
+        width: 100%;
+        max-width: 208px;
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .main_slider .slide .title{
+        font-size: 24px;
+    }
+
+    .main_slider .slide .info{
+        font-size: 14px;
+        margin-top: 10px;
+        max-width: 365px;
+    }
+
+    .main_slider .slide .link_btn{
+        margin-top: 20px;
+    }
+
+
+    .catalog .grid {
+        --items: 1;
+    }
+
+
+    .block_banner .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .block_banner .box .img{
+        position: relative;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 292px;
+        order: -1;
+        margin-bottom: 30px;
+    }
+
+    .block_banner .title{
+        font-size: 18px;
+    }
+
+    .block_banner * + .text {
+        margin-top: 12px;
+    }
+
+    .block_banner * + .link_btn {
+        margin-top: 18px;
+    }
+    
+    .block_banner .link_btn a{
+        width: 100%;
+        max-width: 336px;
+    }
+
+
+    .news .grid {
+        --items: 1;
+    }
+
+    .news-item__data{
+        max-width: 336px;
+        margin: 0 auto;
+    }
+
+
+    .promotions .grid {
+        --items: 2;
+    }
+
+    .promotion-item{
+        padding: 20px;
+    }
+
+    .cities .grid {
+        --items: 2;
+    }
 
     /*---------------
         Footer
     ---------------*/
+    footer{
+        padding-bottom: 60px;
+    }
+    
+    footer .cont{
+        flex-direction: column;
+    }
+
+    footer .cont .col_l{
+        text-align: center;
+        width: 100%;
+    }
+
+    footer .cont .col_r{
+        width: 100%;
+        margin-top: 20px;
+    }
     
 }

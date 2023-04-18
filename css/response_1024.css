@@ -2,6 +2,23 @@
     /*---------------
         Main styles
     ---------------*/
+    .swiper-pagination{
+        padding: 0 30px;
+    }
+
+
+    .main-title{
+        font-size: 24px;
+    }
+
+    .subtitle{
+        font-size: 14px;
+    }
+
+
+    .btns .link_btn > *{
+        min-width: 280px;
+    }
 
     /*---------------
         Header
@@ -10,9 +27,107 @@
     /*---------------
         Main section
     ---------------*/
+    .main_slider .slide {
+        padding: 33px 32px 53px 36px;
+    }
+
+    .main_slider .slide .data{
+        width: 50%;
+    }
+
+    .main_slider .slide .img{
+        width: calc(50% - 15px);
+    }
+
+    
+    .catalog .grid {
+        --items: 2;
+    }
+
+
+    .block_banner .box{
+        overflow: hidden;
+    }
+    
+    .block_banner .box .img{
+        right: -37px;
+        top: 23px;
+    }
+
+
+    .news-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 16px 30px;
+    }
+
+    .news-item__img{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 171px;
+        right: auto;
+        top: auto;
+        order: -1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin-bottom: 25px;
+        padding: 0;
+    }
+
+    .news-item__title{
+        font-size: 18px;
+    }
+
+    .news-item__title br{
+        display: none;
+    }
+
+    .news-item__text{
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    * + .news-item__btn {
+        margin-top: 30px;
+    }
+
+    .news-item__btn a{
+        display: flex;
+        width: 100%;
+    }
+
+
+    .promotion-item{
+        padding: 20px 10px;
+    }
+
+
+    .sect_form .cont{
+        max-width: 700px;
+    }
+
+
+    .reviews .slider .swiper-slide .review + .review{
+        margin-top: 20px;
+    }
+    
 
     /*---------------
         Footer
     ---------------*/
+    footer .cont .col_l{
+        width: calc(40% - 15px);
+    }
+
+    footer .cont .col_r{
+        width: calc(60% - 15px);
+    }
 
 }
