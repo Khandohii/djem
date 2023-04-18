@@ -905,6 +905,24 @@ header .logo img{
     max-width: 100%;
 }
 
+header .logo-mob{
+    width: 25px;
+    display: none;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+header .logo-mob a{
+    display: inline-block;
+}
+
+header .logo-mob img{
+    display: block;
+    max-width: 100%;
+}
+
 header .wrap_menu{
     margin-right: auto;
 }
@@ -1193,6 +1211,10 @@ header .link-office-menu:after{
     margin-top: -7px;
     transform: rotate(45deg);
     transition: .2s linear;
+}
+
+header .link-office-menu:hover:after{
+    right: 10px;
 }
 
 header .link-office-menu__small-text {

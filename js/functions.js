@@ -68,6 +68,14 @@ openMenuBtn.addEventListener("click", function(e){
     }
 });
 
+document.addEventListener("click", function(e){
+    const obs = openMenuBtn.classList.contains('active') && e.target.closest('header .wrap_menu') != mobMenu && e.target != openMenuBtn && e.target.closest('.mob_menu_link') != openMenuBtn;
+    if ( obs ) {
+        closeMobMenu(mobMenu, openMenuBtn);
+        console.log('work');
+    }
+});
+
 function openMobMenu(menu, btn) {
     btn.classList.add('active');
 
@@ -89,7 +97,6 @@ document.querySelectorAll('header .menu .item--more').forEach(item => {
     item.addEventListener('click', (event) => {
         if (window.innerWidth < 1191 && event.target === link || event.target === link.querySelector('span')) {
             event.preventDefault();
-            console.log('link');
 
             if (!item.classList.contains('opened')) {
                 item.classList.add('opened');

@@ -2,17 +2,117 @@
     /*---------------
         Main styles
     ---------------*/
+    .swiper {
+        --swiper-pagination-bottom: 21px;
+    }
+
+    
+    .main-title {
+        font-size: 14px;
+    }
+
+    .subtitle{
+        font-weight: 300;
+    }
+
+
+    .btns{
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        --margin-bottom: 12px;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+    .btns > *{
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .btns .link_btn{
+        width: 100%;
+    }
+
+    .btns .link_btn > *{
+        width: 100%;
+        display: flex;
+        max-width: 100%;
+    }
 
     /*---------------
         Header
     ---------------*/
+    header .logo{
+        display: none;
+    }
+
+    header .logo-mob{
+        display: flex;
+    }
+
+    header .link_btn a{
+        font-size: 14px;
+        padding: 0 15px;
+    }
+
+
+    header .wrap_menu{
+        width: calc(100% - 12px);
+    }
 
     /*---------------
         Main section
     ---------------*/
+    .main_slider .slide{
+        padding-bottom: 57px;
+    }
+
+    .main_slider .slide .title{
+        font-size: 18px;
+    }
+
+    .main_slider .slide .link_btn a{
+        width: 300px;
+        padding: 0 15px;
+    }
+
+
+    .catalog .item .data .name {
+        width: calc(100% - 160px);
+    }
+
+    .catalog .item .data .link_btn {
+        width: 142px;
+    }
+
+    
+    .promotion-item {
+        padding: 20px 5px;
+    }
+
+    .promotion-item__desc{
+        padding: 0 5px;
+    }
+
+
+    .sect_form{
+        margin-top: 35px;
+    }
+
+    .sect_form .form{
+        margin-top: 35px;
+    }
 
     /*---------------
         Footer
     ---------------*/
+    footer .menu {
+        --margin-bottom: 10px;
+        --items: 1;
+        justify-content: center;
+        text-align: center;
+    }
     
 }
