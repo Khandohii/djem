@@ -163,5 +163,45 @@
         width: 100%;
         margin-top: 20px;
     }
+
+
+    .modal__content{
+        text-align: center;
+        padding: 32px 55px 15px;
+    }
+
+    .modal__title{
+        font-size: 18px;
+    }
+
+    .modal__desc{
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .modal__desc br{
+        display: none;
+    }
+
+    .modal__data{
+        max-width: 100%;
+    }
+
+    .modal__img{
+        position: relative;
+        display: block;
+        right: 0;
+        top: 0;
+        max-width: 256px;
+        margin: 0 auto 25px;
+    }
+
+    .modal .link_btn{
+        margin: 25px auto 0;
+    }
+
+    .modal .timer{
+        width: 100%;
+    }
     
 }

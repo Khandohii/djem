@@ -19,6 +19,10 @@ setTimeout(function(){
 }, 200);
 
 
+// Установка ширины стандартного скроллбара
+document.querySelector(':root').style.setProperty('--scroll_width', widthScroll() + 'px');
+
+
 // Scroll to anchor
 document.querySelectorAll('[data-anchor]').forEach(link => {
 
@@ -88,6 +92,149 @@ function closeMobMenu(menu, btn) {
     menu.classList.remove('visible');
 }
 
+
+// LangLinks
+const linksWrap = document.querySelectorAll('header .lang_links');
+linksWrap.forEach(box => {
+    const boxLinks = box.querySelector('.hidden_lang');
+    box.querySelector('a').addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (window.innerWidth < 1025) {
+            if (!boxLinks.classList.contains('visible')) {
+                boxLinks.classList.add('visible');
+            } else{
+                boxLinks.classList.remove('visible');
+            }
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target !== box && !e.target.closest('.lang_links')) {
+            boxLinks.classList.remove('visible');
+        }
+    });
+});
+
+
+// TimerCountdown
+const timer = (path) => {
+    const timers = document.querySelectorAll(path);
+
+    timers.forEach(timer => {
+        const timerBox = timer.querySelector('span');
+        const minutesEnd = timer.getAttribute('data-minutes') || 10;
+        const finishTime = new Date(Date.parse(new Date()) + minutesEnd * 60 * 1000);
+        
+        timerBox.innerHTML = `
+            <span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span>
+        `;
+
+        setClock(timerBox, finishTime);
+
+    });
+
+    function getTimeRemaining(endtime) {
+        let hours, minutes, seconds;
+        
+        const t = Date.parse(endtime) - Date.parse(new Date());
+        
+        if (t <= 0) {
+            hours = 0;
+            minutes = 0;
+            seconds = 0;
+        } else{
+            hours = Math.floor(t / (1000 * 60 * 60) % 24);
+            minutes = Math.floor((t / 1000 / 60) % 60);
+            seconds = Math.floor((t / 1000) % 60);
+        }
+
+        return {
+            total: t,
+            hours,
+            minutes,
+            seconds,
+        };
+    }
+
+    function setClock(selector, endtime) {
+        const timer = selector,
+            hours = timer.querySelector('.hours'),
+            minutes = timer.querySelector('.minutes'),
+            seconds = timer.querySelector('.seconds'),
+            timeInterval = setInterval(updateClock, 1000);
+        
+        updateClock();
+
+        function updateClock() {
+            const t = getTimeRemaining(endtime);
+
+            hours.innerHTML = getZero(t.hours);
+            minutes.innerHTML = getZero(t.minutes);
+            seconds.innerHTML = getZero(t.seconds);
+
+            if (t.total <= 0) {
+                clearInterval(timeInterval);
+            }
+        }
+    }
+
+    function getZero(num) {
+        if (num >= 0 && num < 10) {
+            return `0${num}`;
+        } else{
+            return num;
+        }
+    }
+};
+
+
+// Modal
+const modal = (btns) => {
+    const modalTrigger = document.querySelectorAll(btns),
+          modals = document.querySelectorAll('.modal');
+    
+    modalTrigger.forEach(modalBtn => {
+        const modalId = modalBtn.getAttribute('data-modal');
+        
+        modalBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(modalId);
+        });
+    });
+    
+    modals.forEach(modal => {
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal || e.target.getAttribute('data-close') == '') {
+                closeModal();
+            }
+        });
+    });
+    
+    function openModal(modalId) {
+        document.querySelector(modalId).classList.add('visible');
+        document.querySelector('body').classList.add('lock');
+    }
+    
+    function closeModal() {
+        const transitionStyle = window.getComputedStyle(document.querySelector('.modal')).transitionDuration,
+              transitionTime = parseInt(transitionStyle.replace(/[^0-9]/g,""), 10) * 100;
+
+        modals.forEach(modal => {
+            modal.classList.remove('visible');
+        });
+
+        setTimeout(() => {
+            document.querySelector('body').classList.remove('lock');
+        }, transitionTime);
+    }
+    
+    document.addEventListener("keydown", (e) => {
+        if (e.code === "Escape") {
+            closeModal();
+        }
+    });
+};
 
 // MobSubmenu
 document.querySelectorAll('header .menu .item--more').forEach(item => {
@@ -192,6 +339,20 @@ document.querySelectorAll(".amount .plus").forEach((element) => {
 
 
 // Вспомогательные функции
+function widthScroll() {
+    let div = document.createElement('div');
+    div.style.overflowY = 'scroll';
+    div.style.width = '50px';
+    div.style.height = '50px';
+    div.style.visibility = 'hidden';
+    document.body.appendChild(div);
+
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+    document.body.removeChild(div);
+
+    return scrollWidth;
+}
+
 function supportsCssVars() {
     var s = document.createElement('style'),
         support;

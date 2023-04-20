@@ -99,4 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     accordion('.accordion');
 
     anchorScroll('[data-anchor]', 20);
+
+    timer('.timer');
+
+    modal('[data-modal]');
 });

@@ -23,6 +23,15 @@
     /*---------------
         Header
     ---------------*/
+    header .lang_links:hover .hidden_lang {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    header .lang_links .hidden_lang.visible {
+        opacity: 1;
+        visibility: visible;
+    }
 
     /*---------------
         Main section
