@@ -545,6 +545,10 @@ body.lock{
     line-height: 24px;
 }
 
+.text_block b{
+    font-weight: 500;
+}
+
 .text_block > :last-child{
     margin-bottom: 0 !important;
 }
@@ -570,8 +574,9 @@ body.lock{
 }
 
 .text_block ul,
-.text_block ol{
-    margin-bottom: 25px;
+.text_block ol,
+.text_block p{
+    margin-bottom: 24px;
 }
 
 .text_block img{
@@ -642,7 +647,7 @@ body.lock{
 }
 
 .text_block a{
-    color: var(--color3);
+    color: #4d8eff;
 
     transition: .2s linear;
     text-decoration: none;
@@ -651,7 +656,7 @@ body.lock{
 }
 
 .text_block a:hover{
-    color: var(--color1);
+    color: #387df6;
 }
 
 
@@ -2029,6 +2034,130 @@ header .cont .mob_menu_link{
 
 .faq .btns{
     margin-top: 80px;
+}
+
+
+.contacts__grid {
+    --margin-left: 20px;
+    --margin-bottom: 20px;
+    --items: 2;
+    
+    margin-left: calc(var(--margin-left, 0) * -1);
+    margin-bottom: calc(var(--margin-bottom, 0) * -1);
+}
+
+.contacts-item {
+    margin-left: var(--margin-left, 0);
+    margin-bottom: var(--margin-bottom, 0);
+    width: calc(100% / var(--items, 1) - var(--margin-left, 0));
+
+    padding: 8px 8px 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+}
+
+.contacts-item--wide{
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    width: calc(100% - var(--margin-left, 0));
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.contacts-item--wide > *{
+    width: 50%;
+    width: calc(100% / var(--items, 1) - var(--margin-left, 0) / 2);
+}
+
+.contacts-item__map {
+    height: 194px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.contacts-item--wide .contacts-item__map {
+    height: auto;
+}
+
+.contacts-item--wide .contacts-item__data {
+    padding: 8px 8px 20px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+}
+
+.contacts-item .link-office-menu {
+    position: relative;
+    text-decoration: none;
+    padding: 13px 56px;
+    padding-right: 15px;
+    border-radius: 3px;
+    background: #f1f6ff;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4d8eff;
+    font-weight: 500;
+    transition: .2s linear;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contacts-item .link-office-menu:before{
+    content: '';
+    width: 14px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    margin-top: -12px;
+    background: url('../images/ic-marker.png') 0 0 no-repeat;
+    background-size: contain;
+}
+
+.contacts-item .link-office-menu__small-text {
+    display: block;
+    font-weight: 300;
+    color: #848484;
+}
+
+.contacts-item .text_block {
+    padding: 0 8px;
+}
+
+.contacts-item .btns {
+    --margin-left: 16px;
+    justify-content: space-between;
+    margin-left: 0;
+    padding: 0 16px;
+}
+
+.contacts-item .btns > *{
+    width: calc(50% - var(--margin-left) / 2);
+    margin-left: 0;
+}
+
+.contacts-item .btns .link_btn > * {
+    min-width: 1px;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 15px;
+}
+
+.contacts-item .link_btn--blue > * {
+    background: #4d8eff;
+}
+
+.contacts-item .link_btn--blue > *:hover {
+    background: #387df6;
+}
+
+.contacts-item .link_btn--orange {
 }
 
 /*---------------

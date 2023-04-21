@@ -423,15 +423,7 @@ const customSelect = function(path) {
                     }
                 };
 
-                options.forEach(option => {
-                    option.selected = false;
-
-                    if (dataValue() === option.value) {
-                        option.selected = true;
-                    }
-                });
-
-                createOptionsList(options, selectBoxUl, current);
+                setOption(select, dataValue());
             }
         });
 
@@ -441,31 +433,48 @@ const customSelect = function(path) {
             }
         });
     });
-
-
-    function createOptionsList(options, parent, current) {
-        parent.innerHTML = '';
-
-        options.forEach(option => {
-            const newOption = document.createElement('li');
-
-            newOption.classList.add('option');
-            newOption.innerHTML = `<span class="span">${option.innerHTML}</span>`;
-            newOption.setAttribute('data-value', option.value);
-
-            if (option.selected) {
-                newOption.classList.add('selected');
-                current.innerText = option.innerHTML;
-            }
-
-            if (option.disabled) {
-                newOption.classList.add('disabled');
-            }
-
-            parent.append(newOption);
-        });
-    }
 };
+
+function setOption(mainSelectBox, checkedValue) {
+    const options = mainSelectBox.querySelectorAll('option'),
+          selectBoxUl = mainSelectBox.parentElement.querySelector('ul.list'),
+          current = mainSelectBox.parentElement.querySelector('span.current');
+
+    options.forEach(option => {
+        option.selected = false;
+
+        if (checkedValue === option.value) {
+            option.selected = true;
+        }
+    });
+
+    createOptionsList(options, selectBoxUl, current);
+}
+
+
+function createOptionsList(options, parent, current) {
+    parent.innerHTML = '';
+
+    options.forEach(option => {
+        const newOption = document.createElement('li');
+
+        newOption.classList.add('option');
+        newOption.innerHTML = `<span class="span">${option.innerHTML}</span>`;
+        newOption.setAttribute('data-value', option.value);
+
+        if (option.selected) {
+            newOption.classList.add('selected');
+            current.innerText = option.innerHTML;
+        }
+
+        if (option.disabled) {
+            newOption.classList.add('disabled');
+        }
+
+        parent.append(newOption);
+    });
+}
+
 
 const simpleRating = function(path) {
     const ratings = document.querySelectorAll(path);
@@ -528,6 +537,13 @@ const anchorScroll = function(path, offset) {
             });
 
             closeMobMenu(mobMenu, openMenuBtn);
+        
+            if (link.getAttribute('data-selectbox')) {
+                const selectOption = link.getAttribute('data-selectbox');
+                const path = document.querySelector(`#${href} select`);
+    
+                setOption(path, selectOption);
+            }
         });
     });
 };

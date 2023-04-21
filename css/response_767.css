@@ -24,6 +24,19 @@
     .btns .sep{
         font-size: 14px;
     }
+
+
+    .page_content{
+        padding-bottom: 10px;
+    }
+    
+    .page_content.sect-marg{
+        margin-top: 20px;
+    }
+
+    .page_title{
+        text-align: center;
+    }
     
     /*---------------
         Header
@@ -141,6 +154,27 @@
 
     .cities .grid {
         --items: 2;
+    }
+
+
+    .contacts__grid {
+        --items: 1;
+    }
+
+    .contacts-item--wide > * {
+        width: 100%;
+    }
+
+    .contacts-item--wide .contacts-item__map{
+        height: 194px;
+    }
+
+    .contacts-item--wide .contacts-item__data{
+        margin-top: 8px;
+    }
+
+    .contacts-item .link-office-menu{
+        padding-right: 0;
     }
 
     /*---------------
