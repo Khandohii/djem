@@ -177,6 +177,27 @@
         padding-right: 0;
     }
 
+
+    .news-page__box{
+        padding: 20px 9px;
+    }
+
+    .news-page-item__title{
+        font-size: 18px;
+    }
+
+    .news-page-item__head {
+        --margin-bottom: 0;
+    }
+
+    .news-page-item__head > *{
+        width: 100%;
+    }
+
+    .news-page-item__img{
+        padding-bottom: 39.8%;
+    }
+
     /*---------------
         Footer
     ---------------*/
