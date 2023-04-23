@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    const slidersReviews = document.querySelectorAll('.reviews .slider');
 
     document.querySelectorAll('.reviews .slider').forEach(slider => {
         const slides = slider.querySelectorAll('.swiper-slide');
@@ -80,14 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.classList.add('swiper-slide');
                 wrapper.append(element);
             });
-        } else{
-            // wrapper.innerHTML = '';
-
-            // slides.forEach(slide => {
-            //     wrapper.append(slide);
-            // });
-
-            // console.log(wrapper);
         }
     }
 

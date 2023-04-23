@@ -1,4 +1,5 @@
-@media (max-width: 479px){
+@media (max-width: 479px) {
+
     /*---------------
         Main styles
     ---------------*/
@@ -6,17 +7,17 @@
         --swiper-pagination-bottom: 21px;
     }
 
-    
+
     .main-title {
         font-size: 14px;
     }
 
-    .subtitle{
+    .subtitle {
         font-weight: 300;
     }
 
 
-    .btns{
+    .btns {
         flex-direction: column;
         align-items: center;
         align-content: center;
@@ -26,63 +27,63 @@
         margin-left: 0;
     }
 
-    .btns > *{
+    .btns>* {
         margin-top: 0;
         margin-left: 0;
     }
 
-    .btns .link_btn{
+    .btns .link_btn {
         width: 100%;
     }
 
-    .btns .link_btn > *{
+    .btns .link_btn>* {
         width: 100%;
         display: flex;
         max-width: 100%;
     }
 
 
-    .page_content{
+    .page_content {
         padding: 0;
     }
 
-    .page_title{
+    .page_title {
         padding: 0;
     }
 
     /*---------------
         Header
     ---------------*/
-    header .logo{
+    header .logo {
         display: none;
     }
 
-    header .logo-mob{
+    header .logo-mob {
         display: flex;
     }
 
-    header .link_btn a{
+    header .link_btn a {
         font-size: 14px;
         padding: 0 15px;
     }
 
 
-    header .wrap_menu{
+    header .wrap_menu {
         width: calc(100% - 12px);
     }
 
     /*---------------
         Main section
     ---------------*/
-    .main_slider .slide{
+    .main_slider .slide {
         padding-bottom: 57px;
     }
 
-    .main_slider .slide .title{
+    .main_slider .slide .title {
         font-size: 18px;
     }
 
-    .main_slider .slide .link_btn a{
+    .main_slider .slide .link_btn a {
         width: 300px;
         padding: 0 15px;
     }
@@ -96,21 +97,21 @@
         width: 142px;
     }
 
-    
+
     .promotion-item {
         padding: 20px 5px;
     }
 
-    .promotion-item__desc{
+    .promotion-item__desc {
         padding: 0 5px;
     }
 
 
-    .sect_form{
+    .sect_form {
         margin-top: 35px;
     }
 
-    .sect_form .form{
+    .sect_form .form {
         margin-top: 35px;
     }
 
@@ -125,17 +126,17 @@
     }
 
 
-    .modal__content{
+    .modal__content {
         text-align: center;
         padding: 32px 14px 15px;
     }
 
-    .modal__desc{
+    .modal__desc {
         margin-top: 8px;
     }
 
     .modal .link_btn {
         margin: 20px auto 0;
     }
-    
+
 }
