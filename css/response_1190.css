@@ -116,7 +116,7 @@
         box-shadow: none;
     }
 
-    header .menu .item:not(.opened) {
+    header .menu .item:not(.opened) .submenu{
         display: none;
     }
 

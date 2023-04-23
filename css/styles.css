@@ -2194,7 +2194,7 @@ header .cont .mob_menu_link {
     transition: height .3s ease;
 }
 
-.accordion .item:not(.active) {
+.accordion .item:not(.active) .data {
     display: none;
 }
 
