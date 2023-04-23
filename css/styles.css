@@ -583,7 +583,8 @@ body.lock{
     display: block;
 
     max-width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
+    border-radius: 3px;
 }
 
 .text_block img.left{
@@ -608,7 +609,7 @@ body.lock{
 
 .text_block ul li:before{
     position: absolute;
-    top: 8px;
+    top: 10px;
     left: 0;
 
     width: 6px;
@@ -617,7 +618,7 @@ body.lock{
     content: '';
 
     border-radius: 50%;
-    background: var(--bg2);
+    background: currentColor;
 }
 
 .text_block ol{
@@ -633,13 +634,13 @@ body.lock{
 }
 
 .text_block ol li:before{
-    color: var(--color3);
-    font-weight: 700;
+    color: currentColor;
 
     display: inline;
 
     content: counter(li)'.';
     counter-increment: li;
+    margin-right: 3px;
 }
 
 .text_block ol li + li{
@@ -2158,16 +2159,12 @@ header .cont .mob_menu_link{
 }
 
 
-.news-page {}
-
 .news-page__box {
     padding: 30px 40px;
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
 }  
-
-.news-page-item {}
 
 .news-page-item + .news-page-item {
     margin-top: 20px;
@@ -2195,6 +2192,7 @@ header .cont .mob_menu_link{
 .news-page-item__title {
     font-size: 24px;
     line-height: 32px;
+    font-weight: 400;
 }
 
 .news-page-item__title a{
@@ -2262,8 +2260,6 @@ footer .cont{
 footer .cont > *{
     width: calc(50% - 30px);
 }
-
-footer .cont .col_l{}
 
 footer .cont .col_r{
     max-width: 440px;
