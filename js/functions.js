@@ -76,7 +76,6 @@ document.addEventListener("click", function(e){
     const obs = openMenuBtn.classList.contains('active') && e.target.closest('header .wrap_menu') != mobMenu && e.target != openMenuBtn && e.target.closest('.mob_menu_link') != openMenuBtn;
     if ( obs ) {
         closeMobMenu(mobMenu, openMenuBtn);
-        console.log('work');
     }
 });
 

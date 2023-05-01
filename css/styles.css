@@ -816,7 +816,7 @@ body.lock {
 }
 
 .link_btn--outlined > * {
-    padding: 0 32px;
+    padding: 0 30px;
 
     color: #000;
     border: 1px solid #d0d0d0;
@@ -1148,7 +1148,8 @@ header .menu .item .submenu .item a {
 
     display: block;
 
-    padding: 20px 12px;
+    padding: 17px 12px;
+    min-height: 70px;
     padding-right: 25px;
 
     transition: .2s linear;
@@ -1479,13 +1480,15 @@ header .cont .mob_menu_link {
 .main_slider .slide .title {
     font-size: 40px;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 48px;
+    min-height: 96px;
 }
 
 .main_slider .slide .info {
     font-size: 20px;
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 32px;
+    min-height: 96px;
 
     margin-top: 23px;
 }
@@ -1502,6 +1505,7 @@ header .cont .mob_menu_link {
 
     height: 60px;
     padding: 0 47px;
+    min-width: 300px;
 }
 
 .main_slider .slide .img {
@@ -1606,7 +1610,7 @@ header .cont .mob_menu_link {
     justify-content: space-between;
 
     margin-top: 6px;
-    padding: 9px 6px;
+    padding: 3px 6px;
 
     border-radius: 3px;
     background: #fff;
@@ -1615,7 +1619,6 @@ header .cont .mob_menu_link {
 
 .catalog .item .data .name {
     font-size: 16px;
-    font-weight: 300;
     line-height: 24px;
 
     width: calc(100% - 167px);
@@ -1625,6 +1628,7 @@ header .cont .mob_menu_link {
     font-size: 12px;
 
     color: #7e7f82;
+    font-weight: 300;
 }
 
 .catalog .item .data .link_btn {
@@ -1641,8 +1645,8 @@ header .cont .mob_menu_link {
 
 .border_btn {
     font-size: 14px;
+    line-height: 16px;
     font-weight: 500;
-    line-height: 1.2;
 
     display: block;
 
@@ -1682,19 +1686,20 @@ header .cont .mob_menu_link {
 .block_banner .title {
     font-size: 28px;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 30px;
 
     color: #272a34;
 }
 
 .block_banner * + .text {
-    margin-top: 15px;
+    margin-top: 11px;
 }
 
 .block_banner .text {
     font-size: 16px;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 24px;
+    min-height: 48px;
 
     max-width: 475px;
 }
@@ -1707,6 +1712,7 @@ header .cont .mob_menu_link {
     display: inline-flex;
 
     padding: 0 70px;
+    min-width: 230px;
 }
 
 .block_banner .box .img {
@@ -1762,30 +1768,34 @@ header .cont .mob_menu_link {
 
 .news-item__title {
     font-size: 28px;
-    line-height: 1.1;
+    line-height: 32px;
+    min-height: 64px;
+    font-weight: 500;
 
     color: #000;
 }
 
 * + .news-item__text {
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .news-item__text {
     font-size: 16px;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 24px;
+    min-height: 72px;
 
     max-width: 230px;
-    margin-top: 20px;
 }
 
 * + .news-item__btn {
-    margin-top: 23px;
+    margin-top: 16px;
 }
 
 .news-item__btn a {
     display: inline-flex;
+    min-width: 152px;
+    font-weight: 500;
 }
 
 .news-item__img {
@@ -2023,6 +2033,15 @@ header .cont .mob_menu_link {
     padding: 10px;
 }
 
+.reviews .grid{
+    --margin-left: 20px;
+    --margin-bottom: 20px;
+    --items: 4;
+    
+    margin-left: calc(var(--margin-left, 0) * -1);
+    margin-bottom: calc(var(--margin-bottom, 0) * -1);
+}
+
 .review {
     position: relative;
 
@@ -2031,6 +2050,10 @@ header .cont .mob_menu_link {
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.07);
+    
+    margin-left: var(--margin-left, 0);
+    margin-bottom: var(--margin-bottom, 0);
+    width: calc(100% / var(--items, 1) - var(--margin-left, 0));
 }
 
 .review__tag {

@@ -88,6 +88,24 @@
         padding: 0 15px;
     }
 
+    
+    .block_banner .box{
+        padding: 30px 8px;
+    }
+
+    .block_banner .box .img{
+        margin-bottom: 5px;
+        height: 153px;
+    }
+
+    .block_banner *+.text{
+        margin-top: 2px;
+    }
+
+    .block_banner *+.link_btn {
+        margin-top: 12px;
+    }
+
 
     .catalog .item .data .name {
         width: calc(100% - 160px);

@@ -80,12 +80,14 @@
 
     .main_slider .slide .title {
         font-size: 24px;
+        min-height: 1px;
     }
 
     .main_slider .slide .info {
         font-size: 14px;
         margin-top: 10px;
         max-width: 365px;
+        min-height: 72px;
     }
 
     .main_slider .slide .link_btn {
@@ -105,6 +107,7 @@
         align-content: center;
         flex-direction: column;
         text-align: center;
+        min-height: 380px;
     }
 
     .block_banner .box .img {
@@ -122,7 +125,7 @@
     }
 
     .block_banner *+.text {
-        margin-top: 12px;
+        margin-top: 5px;
     }
 
     .block_banner *+.link_btn {
@@ -197,6 +200,11 @@
 
     .news-page-item__img {
         padding-bottom: 39.8%;
+    }
+
+
+    .reviews .grid{
+        --items: 1;
     }
 
     /*---------------

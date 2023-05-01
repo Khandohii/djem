@@ -173,10 +173,14 @@
 
     .main_slider .slide .title {
         font-size: 28px;
+        line-height: 36px;
+        min-height: 72px;
     }
 
     .main_slider .slide .info {
         font-size: 16px;
+        line-height: 24px;
+        min-height: 72px;
 
         margin-top: 20px;
     }
@@ -203,7 +207,7 @@
     }
 
     .block_banner .box {
-        padding: 30px 28px 24px;
+        padding: 25px 28px;
     }
 
     .block_banner .title {
@@ -215,7 +219,8 @@
     }
 
     .news-item {
-        padding: 40px 200px 30px 28px;
+        padding: 37px 200px 30px 28px;
+        min-height: 280px;
     }
 
     .news-item__title {
