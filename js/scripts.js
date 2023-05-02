@@ -42,4 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
     timer('.timer');
 
     modal('[data-modal]');
+
+    // Setting Height
+    document.querySelectorAll('.promotions .grid').forEach(parent => {
+        const step = getCSSCustomProp('--items', parent, 'number');
+
+        settingHeight(parent, step, '.promotion-item', ['.promotion-item__title', '.promotion-item__desc']);
+    });
+});
+
+window.addEventListener("resize", () => {
+    // Setting Height
+    document.querySelectorAll('.promotions .grid').forEach(parent => {
+        const step = getCSSCustomProp('--items', parent, 'number');
+
+        settingHeight(parent, step, '.promotion-item', ['.promotion-item__title', '.promotion-item__desc']);
+    });
 });

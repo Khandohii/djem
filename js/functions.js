@@ -274,68 +274,6 @@ document.querySelectorAll('header .menu .item--more').forEach(item => {
 });
 
 
-// Tabs
-document.querySelectorAll(".tabs button").forEach(function(element){
-    element.addEventListener("click", function(e){
-        e.preventDefault();
-
-        let parent = this.closest(".tabs_container");
-        let activeTab = this.getAttribute("data-content");
-        let level = this.getAttribute("data-level");
-
-        if ( !this.classList.contains("active") ) {
-            this.closest('.tabs').querySelector("button.active").classList.remove("active");
-
-            document.querySelector(activeTab).closest('.tabs_container').querySelectorAll(".tab_content.active." + level).forEach((el) => {
-                el.classList.remove("active");
-            });
-
-            this.classList.add("active");
-
-            document.querySelector(activeTab).classList.add("active");
-
-            // For a few tab_content
-            document.querySelectorAll('[data-id="' + activeTab + '"]').forEach((el) => {
-                el.classList.add("active");
-            });
-        }
-    });
-});
-
-
-// Изменение количества товара
-document.querySelectorAll(".amount .minus").forEach((element) => {
-    element.addEventListener("click", function(e){
-        e.preventDefault();
-
-        let parent = this.closest('.amount');
-        let input = parent.querySelector('input');
-        let inputVal = parseFloat( input.value );
-        let minimum = parseFloat( input.getAttribute('data-minimum') );
-        let step = parseFloat( input.getAttribute('data-step') );
-
-        if( inputVal > minimum ){
-            input.value = inputVal-step;
-        }
-    });
-});
-document.querySelectorAll(".amount .plus").forEach((element) => {
-    element.addEventListener("click", function(e){
-        e.preventDefault();
-
-        let parent = this.closest('.amount');
-        let input = parent.querySelector('input');
-        let inputVal = parseFloat( input.value );
-        let maximum = parseFloat( input.getAttribute('data-maximum') );
-        let step = parseFloat( input.getAttribute('data-step') );
-
-        if( inputVal < maximum ){
-            input.value = inputVal+step;
-        }
-    });
-});
-
-
 
 // Вспомогательные функции
 function widthScroll() {
@@ -368,16 +306,16 @@ function supportsCssVars() {
 function setHeight(className){
     let maxheight = 0;
 
-    className.each(function() {
-    	let elHeight = this.offsetHeight;
+    className.forEach(element => {
+    	let elHeight = element.offsetHeight;
 
         if( elHeight > maxheight ) {
         	maxheight = elHeight;
         }
     });
 
-    className.each(function() {
-    	this.style.height = maxheight + 'px';
+    className.forEach(element => {
+    	element.style.height = maxheight + 'px';
     });
 }
 
@@ -600,4 +538,77 @@ const accordion = function(path) {
             item.classList.remove('active');
         }, { once: true });
     }
+};
+
+
+// Выравнивание
+function settingHeight(parent, step, itemSelector, innerItems) {
+    let start    = 0;
+    let finish   = step;
+    let items = parent.querySelectorAll(itemSelector);
+
+    if (innerItems) {
+        innerItems.forEach(innerItem => {
+            items.forEach(item => {
+                item.querySelector(innerItem).style.height = 'auto';
+            });
+        });
+    }
+
+    items.forEach(item => {
+        item.style.height = 'auto';
+    });
+
+    setTimeout(function(){
+        for (let i = 0; i < items.length; i++) {
+
+            if (innerItems) {
+                innerItems.forEach(innerItem => {
+                    let innersArr = [];
+                    [...items].slice(start, finish).forEach(item => {
+                        innersArr.push(item.querySelector(innerItem));
+                    });
+                    setHeight(innersArr);
+                });
+            }
+
+            setHeight([...items].slice(start, finish));
+
+            start  = start + step;
+            finish = finish + step;
+        }
+    }, 100);
+}
+
+/**
+ * Передаем элемент и его пользовательские свойства, значение которого нам необходимо.
+ * Мы можем определить, какой тип данных получим в итоге.
+ *
+ * @param {String} propKey
+ * @param {HTMLELement} element=document.documentElement
+ * @param {String} castAs='string'
+ * @returns {*}
+ */
+const getCSSCustomProp = (propKey, element = document.documentElement, castAs = 'string') => {
+    let response = getComputedStyle(element).getPropertyValue(propKey);
+
+    // Если нужно, приводим в порядок строку
+    if (response.length) {
+        response = response.replace(/"/g, '').trim();
+    }
+
+    // Преобразуем возвращаемые данные в любой желаемый тип
+    switch (castAs) {
+        case 'number':
+        case 'int':
+            return parseInt(response, 10);
+        case 'float':
+            return parseFloat(response, 10);
+        case 'boolean':
+        case 'bool':
+            return response === 'true' || response === '1';
+    }
+
+    // Возвращаем результат
+    return response;
 };
