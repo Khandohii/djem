@@ -16,6 +16,7 @@
         font-size: 18px;
     }
 
+
     .btns .link_btn>* {
         min-width: 186px;
         padding: 0 15px;
@@ -85,9 +86,9 @@
 
     .main_slider .slide .info {
         font-size: 14px;
-        margin-top: 10px;
         max-width: 365px;
         min-height: 72px;
+        margin: 10px auto 0;
     }
 
     .main_slider .slide .link_btn {
@@ -97,6 +98,18 @@
 
     .catalog .grid {
         --items: 1;
+    }
+
+    .catalog .item .img {
+        padding-bottom: 38.464%;
+    }
+
+    .catalog .item .data .name {
+        width: calc(100% - 163px);
+    }
+
+    .catalog .item .data .link_btn {
+        width: 158px;
     }
 
 
@@ -143,8 +156,13 @@
     }
 
     .news-item__data {
+        width: 100%;
         max-width: 336px;
         margin: 0 auto;
+    }
+
+    .news-item__btn a{
+        min-width: 1px;
     }
 
 
@@ -205,6 +223,11 @@
 
     .reviews .grid{
         --items: 1;
+    }
+
+    .review{
+        min-height: 268px;
+        padding: 17px 13px;
     }
 
     /*---------------

@@ -43,19 +43,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     modal('[data-modal]');
 
-    // Setting Height
-    document.querySelectorAll('.promotions .grid').forEach(parent => {
-        const step = getCSSCustomProp('--items', parent, 'number');
-
-        settingHeight(parent, step, '.promotion-item', ['.promotion-item__title', '.promotion-item__desc']);
-    });
+    settingAllHeight();
 });
 
 window.addEventListener("resize", () => {
-    // Setting Height
+    settingAllHeight();
+});
+
+function settingAllHeight() {
     document.querySelectorAll('.promotions .grid').forEach(parent => {
         const step = getCSSCustomProp('--items', parent, 'number');
 
         settingHeight(parent, step, '.promotion-item', ['.promotion-item__title', '.promotion-item__desc']);
     });
-});
+    
+    document.querySelectorAll('.reviews .grid').forEach(parent => {
+        const step = getCSSCustomProp('--items', parent, 'number');
+
+        settingHeight(parent, step, '.review', ['.name', '.small_info', '.text']);
+    });
+}

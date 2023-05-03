@@ -57,6 +57,10 @@
         --items: 2;
     }
 
+    .catalog .item .img {
+        padding-bottom: 48.915%;
+    }
+
 
     .block_banner .box{
         overflow: hidden;
@@ -121,6 +125,7 @@
 
     .promotion-item{
         padding: 20px 10px;
+        min-height: 220px;
     }
 
 
@@ -135,6 +140,11 @@
 
     .reviews .slider .swiper-slide .review + .review{
         margin-top: 20px;
+    }
+
+    
+    .faq .btns{
+        margin-top: 66px;
     }
     
 

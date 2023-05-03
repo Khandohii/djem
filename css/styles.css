@@ -1983,7 +1983,8 @@ header .cont .mob_menu_link {
     width: calc(100% / var( --items, 1) - var( --margin-left, 0) );
     margin-bottom: var(--margin-bottom, 0);
     margin-left: var(--margin-left, 0);
-    padding: 8px 13px;
+    padding: 8px 13px 7px;
+    min-height: 40px;
 
     cursor: pointer;
     text-decoration: none;
@@ -2135,6 +2136,7 @@ header .cont .mob_menu_link {
     line-height: 18px;
 
     margin-top: 12px;
+    text-indent: 15px;
 }
 
 .review .simple-rating {
