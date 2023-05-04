@@ -29,11 +29,11 @@
 
 
     .page_content {
-        padding-bottom: 10px;
+        padding-bottom: 5px;
     }
 
     .page_content.sect-marg {
-        margin-top: 20px;
+        margin-top: 25px;
     }
 
     .page_title {
@@ -150,6 +150,10 @@
         max-width: 336px;
     }
 
+    .block_banner .box .data{
+        width: 100%;
+    }
+
 
     .news .grid {
         --items: 1;
@@ -201,7 +205,7 @@
 
 
     .news-page__box {
-        padding: 20px 9px;
+        padding: 14px 9px;
     }
 
     .news-page-item__title {
@@ -217,7 +221,8 @@
     }
 
     .news-page-item__img {
-        padding-bottom: 39.8%;
+        padding-bottom: 40%;
+        margin-top: 17px;
     }
 
 

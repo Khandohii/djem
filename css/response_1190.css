@@ -81,7 +81,7 @@
     header .menu .item--more > a:before {
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 16px;
 
         width: 14px;
         height: 8px;
