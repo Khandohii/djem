@@ -297,6 +297,11 @@ body.lock {
     box-shadow: var(--field-shadow, none);
 }
 
+.form .input:focus::placeholder,
+.form textarea:focus::placeholder {
+    color: transparent;
+}
+
 .form .success,
 .form .success + .custom-select .current {
     border-color: green;
@@ -828,7 +833,7 @@ body.lock {
 }
 
 .sect-marg {
-    margin-top: 14px;
+    margin-top: 20px;
 }
 
 .main-title {
@@ -1474,13 +1479,18 @@ header .cont .mob_menu_link {
 
 .main_slider .slide .data {
     width: 55%;
+    min-height: 310px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    flex-direction: column;
 }
 
 .main_slider .slide .title {
     font-size: 40px;
     font-weight: 600;
     line-height: 48px;
-    min-height: 96px;
 }
 
 .main_slider .slide .info {
@@ -1490,6 +1500,7 @@ header .cont .mob_menu_link {
     min-height: 96px;
 
     margin-top: 23px;
+    margin-bottom: auto;
 }
 
 .main_slider .slide .link_btn {
@@ -1763,6 +1774,7 @@ header .cont .mob_menu_link {
 .news-item__data {
     position: relative;
     z-index: 5;
+    width: 100%;
 }
 
 .news-item__title {
@@ -2229,7 +2241,7 @@ header .cont .mob_menu_link {
 }
 
 .faq .btns {
-    margin-top: 80px;
+    margin-top: 66px;
 }
 
 .contacts__grid {

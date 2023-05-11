@@ -81,7 +81,6 @@
 
     .main_slider .slide .title {
         font-size: 24px;
-        min-height: 1px;
     }
 
     .main_slider .slide .info {
@@ -159,12 +158,6 @@
         --items: 1;
     }
 
-    .news-item__data {
-        width: 100%;
-        max-width: 336px;
-        margin: 0 auto;
-    }
-
     .news-item__btn a{
         min-width: 1px;
     }
@@ -233,6 +226,10 @@
     .review{
         min-height: 268px;
         padding: 17px 13px;
+    }
+
+    .review .text{
+        min-height: 72px;
     }
 
     /*---------------

@@ -82,6 +82,12 @@
         padding: 20px 16px 30px;
     }
 
+    .news-item__data {
+        width: 100%;
+        max-width: 336px;
+        margin: 0 auto;
+    }
+
     .news-item__img{
         position: relative;
         display: block;
