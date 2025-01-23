@@ -124,7 +124,7 @@ const timer = (path) => {
         const timerBox = timer.querySelector('span');
         const minutesEnd = timer.getAttribute('data-minutes') || 10;
         const finishTime = new Date(Date.parse(new Date()) + minutesEnd * 60 * 1000);
-        
+
         timerBox.innerHTML = `
             <span class="hours"></span>:<span class="minutes"></span>:<span class="seconds"></span>
         `;
@@ -135,9 +135,9 @@ const timer = (path) => {
 
     function getTimeRemaining(endtime) {
         let hours, minutes, seconds;
-        
+
         const t = Date.parse(endtime) - Date.parse(new Date());
-        
+
         if (t <= 0) {
             hours = 0;
             minutes = 0;
@@ -162,7 +162,7 @@ const timer = (path) => {
             minutes = timer.querySelector('.minutes'),
             seconds = timer.querySelector('.seconds'),
             timeInterval = setInterval(updateClock, 1000);
-        
+
         updateClock();
 
         function updateClock() {
@@ -192,16 +192,16 @@ const timer = (path) => {
 const modal = (btns) => {
     const modalTrigger = document.querySelectorAll(btns),
           modals = document.querySelectorAll('.modal');
-    
+
     modalTrigger.forEach(modalBtn => {
         const modalId = modalBtn.getAttribute('data-modal');
-        
+
         modalBtn.addEventListener('click', (e) => {
             e.preventDefault();
             openModal(modalId);
         });
     });
-    
+
     modals.forEach(modal => {
         modal.addEventListener('click', (e) => {
             if (e.target === modal || e.target.getAttribute('data-close') == '') {
@@ -209,12 +209,12 @@ const modal = (btns) => {
             }
         });
     });
-    
+
     function openModal(modalId) {
         document.querySelector(modalId).classList.add('visible');
         document.querySelector('body').classList.add('lock');
     }
-    
+
     function closeModal() {
         const transitionStyle = window.getComputedStyle(document.querySelector('.modal')).transitionDuration,
               transitionTime = parseInt(transitionStyle.replace(/[^0-9]/g,""), 10) * 100;
@@ -227,7 +227,7 @@ const modal = (btns) => {
             document.querySelector('body').classList.remove('lock');
         }, transitionTime);
     }
-    
+
     document.addEventListener("keydown", (e) => {
         if (e.code === "Escape") {
             closeModal();
@@ -263,7 +263,7 @@ document.querySelectorAll('header .menu .item--more').forEach(item => {
             } else {
                 /** Set the height as 0px to trigger the slide up animation. */
                 submenu.style.height = "0px";
-        
+
                 /** Remove the `active` class when the animation ends. */
                 submenu.addEventListener('transitionend', () => {
                     item.classList.remove('opened');
@@ -438,7 +438,7 @@ const simpleRating = function(path) {
                 });
             });
 
-            
+
             star.addEventListener('click', (event) => {
                 stars.forEach(star => {
                     star.classList.remove('active');
@@ -474,11 +474,11 @@ const anchorScroll = function(path, offset) {
             });
 
             closeMobMenu(mobMenu, openMenuBtn);
-        
+
             if (link.getAttribute('data-selectbox')) {
                 const selectOption = link.getAttribute('data-selectbox');
                 const path = document.querySelector(`#${href} select`);
-    
+
                 setOption(path, selectOption);
             }
         });
@@ -504,17 +504,17 @@ const accordion = function(path) {
                                 closeItem(otherItem);
                             }
                         });
-                        
+
                         item.classList.add('active');
                         data.style.height = "auto";
-    
+
                         /** Get the computed height of the container. */
                         var height = data.clientHeight + "px";
-    
+
                         /** Set the height of the content as 0px, */
                         /** so we can trigger the slide down animation. */
                         data.style.height = "0px";
-    
+
                         /** Do this after the 0px has applied. */
                         /** It's like a delay or something. MAGIC! */
                         setTimeout(() => {

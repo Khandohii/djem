@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'bullets',
             clickable: true,
         },
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 5000,
+        //     disableOnInteraction: false,
+        // },
     });
 
 

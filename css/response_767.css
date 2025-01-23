@@ -70,6 +70,7 @@
 
     .main_slider .slide .data {
         width: 100%;
+        min-height: 186px;
     }
 
     .main_slider .slide .img {

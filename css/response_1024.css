@@ -42,6 +42,7 @@
 
     .main_slider .slide .data{
         width: 50%;
+        min-height: 271px;
     }
 
     .main_slider .slide .img{
